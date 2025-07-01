@@ -176,7 +176,7 @@ class Particle:
             # Lightning: erratic movement, short life, potential to branch
             self.vx += random.uniform(-5, 5)
             self.vy += random.uniform(-5, 5)
-            self.life -= 1.65 # Decreased life decrement for longer visibility
+            self.life -= 1.65 # How visible it is
             self.branch_timer -= 1
             if self.branch_timer <= 0 and not self.branched:
                 self.branched = True
@@ -1288,7 +1288,7 @@ class ParticleSystem:
             self.particles.append(Particle(x, y, vx, vy, color, size, "sound_visualizer"))
 
     def create_constellation(self, x, y):
-        for _ in range(1): # Reduced from 3 to 2 particles per click
+        for _ in range(1): # Only 1 per click
             vx = random.uniform(-1, 1)
             vy = random.uniform(-1, 1)
             
@@ -1571,7 +1571,7 @@ def main():
                 "Y: Explosion/Implosion (Right-click for Implosion)",
                 "U: Wave/Ripple I: Path Follower",
                 "Z: Spring Attraction X: Pixel Painter C: Chain Reaction",
-                "B: Light Tracer [: Aurora    ]: Geyser", # Corrected instructions
+                "B: Light Tracer [: Aurora    ]: Geyser", # Instructions
                 "V: Clear particles"
             ]
             
